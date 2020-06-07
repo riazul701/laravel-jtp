@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/example', function () {
+    return "Hello javaTpoint";
+});
+
+//Route::get('hello', function () {
+//    return redirect('/');
+//});
+
+//Route::redirect('hello', '/');
+
+Route::view('/', 'welcome');
