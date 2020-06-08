@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::resource('posts', 'PostController');
+//
+//Route::resource('student', 'StudentController');
+
+//Route::resource('student', 'StudentController', [
+//    'only' => ['create', 'show']
+//]);
+
+//Route::resource('student', 'StudentController', [
+//    'names' => ['create' => 'student.build']
+//]);
+
+Route::resource('student', 'StudentController', [
+    'parameters' => ['student' => 'admin_student']
+]);
