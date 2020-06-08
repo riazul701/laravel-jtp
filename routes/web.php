@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+//Route::get('/', function () {
+//    return view('welcome');
+//})->middleware('age');
+
+//Route::get('user/profile', function() {
+//    return "user profile";
+//});
+
+Route::get('/{age}', function($age) {
     return view('welcome');
-});
+})->middleware('age');
+
