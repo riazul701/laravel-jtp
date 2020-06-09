@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/contact', function() {
+    return view('contact');
+});
+
+Route::get('/post/{id}/{password}/{name}', 'PostController@show_post');
+
+Route::get('/contact_2', function() {
+    return view('contact_2');
+});
