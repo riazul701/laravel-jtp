@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2020 at 09:03 PM
+-- Generation Time: Jun 11, 2020 at 11:00 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -139,6 +139,7 @@ INSERT INTO `photos` (`id`, `path`, `imageable_id`, `imageable_type`, `created_a
 
 CREATE TABLE `posts` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -150,9 +151,10 @@ CREATE TABLE `posts` (
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `title`, `body`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Software Developer', 'Gunjun is a software developer', NULL, NULL, NULL),
-(2, 'Software Tester', 'Gunjun is a software tester', NULL, NULL, NULL);
+INSERT INTO `posts` (`id`, `user_id`, `title`, `body`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 'Graphic Designer', 'Gunjun is a graphic designer', NULL, NULL, NULL),
+(4, 2, 'Software Developer', 'Akshay is a software developer', '2020-06-11 02:30:17', '2020-06-11 02:30:17', NULL),
+(5, 0, 'HR', 'Hema is a hr', '2020-06-11 02:39:45', '2020-06-11 02:39:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -377,7 +379,7 @@ ALTER TABLE `photos`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `roles`
