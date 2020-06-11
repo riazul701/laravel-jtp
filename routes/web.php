@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/file-upload', function() {
+    return view('form');
+});
+
+Route::get('/show', 'FormController@index');
+
+Route::post('forms.store', 'FormController@store')->name('forms.store');
